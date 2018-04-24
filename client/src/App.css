@@ -1,0 +1,48 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 48px;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.sidebar-sticky li.list-group-item {
+  border-radius: 0 !important;
+}
+
+span.delete {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+span.name {
+  cursor: pointer;
+}
+
+span.name:hover {
+  text-decoration: underline;
+}
+
+.user-actions {
+  display: flex;
+}
+.user-actions.students {
+  justify-content: space-between;
+}
+
+.user-actions.courses {
+  justify-content: flex-end;
+}

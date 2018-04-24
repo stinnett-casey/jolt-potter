@@ -1,0 +1,40 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: npm start
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysqldb
+  api:
+    build: .
+    command: npm start
+    environment:
+      - PORT=3001
+      - NODE_ENV=dev
+      - ENV_NAME=local
+    ports:
+      - "3001:3001"
+    working_dir: /app/
+    volumes:
+      - .:/app/
+    depends_on:
+      - mysqldb
+  mysqldb:
+    image: mysql
+    container_name: mysqldb
+    command: mysqld --user=root --verbose
+    volumes:
+       - ./schemadump.sql:/docker-entrypoint-initdb.d/schemadump.sql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: "test"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: ""
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
