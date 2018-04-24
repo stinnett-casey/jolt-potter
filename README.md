@@ -15,7 +15,9 @@ Tables
     * grade
 
 Students m-to-m Courses
+
 Students 1-to-m enrollments
+
 Courses 1-to-m enrollments
 
 ## Technologies
