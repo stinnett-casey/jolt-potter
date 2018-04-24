@@ -1,8 +1,7 @@
 # Full Stack Test
 
 ## DB Schema
-Tables
-------
+### Tables
 * students
     * id
     * name
@@ -32,7 +31,14 @@ Things to add (if it mattered)
     * All classes each student is enrolled in
     * Show the grades of each student for each class
     * Ability to edit grades
-
+    
+ Since I didn't get Docker to work...
+ In one terminal window, cd into the root dir `jolt-potter-node` and run `npm start`. This will start Express.
+ 
+ In a second terminal:
+ cd into `client` and run `npm start`. This will start React.
+ 
+ As long as MySql is running in the backround, and you've set up the DB correctly, then it should be good to go!
 ## URLs
     * All students and all courses
         * GET /students or /courses
